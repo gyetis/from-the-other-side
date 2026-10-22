@@ -19,7 +19,7 @@ function renderCards(cardsData) {
 }
 
 // handle card expand/collapse
-document.querySelector('.cards-container').addEventListener('click', (e) => {
+/* document.querySelector('.cards-container').addEventListener('click', (e) => {
     if (!e.target.classList.contains('read-more-btn')) return;
 
     const button = e.target;
@@ -28,4 +28,4 @@ document.querySelector('.cards-container').addEventListener('click', (e) => {
 
     button.setAttribute('aria-expanded', isExpanded ? 'true' : 'false');
     button.textContent = isExpanded ? 'Show less' : 'Read in full';
-});
+}); */
