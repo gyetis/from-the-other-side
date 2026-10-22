@@ -1,3 +1,7 @@
+const data = await fetch('/api');
+const response = await data.json();
+renderCards(response);
+
 function renderCards(cardsData) {
     const container = document.querySelector('.cards-container');
     let cardsHTML = '';
@@ -19,7 +23,7 @@ function renderCards(cardsData) {
 }
 
 // handle card expand/collapse
-/* document.querySelector('.cards-container').addEventListener('click', (e) => {
+document.querySelector('.cards-container').addEventListener('click', (e) => {
     if (!e.target.classList.contains('read-more-btn')) return;
 
     const button = e.target;
@@ -28,4 +32,4 @@ function renderCards(cardsData) {
 
     button.setAttribute('aria-expanded', isExpanded ? 'true' : 'false');
     button.textContent = isExpanded ? 'Show less' : 'Read in full';
-}); */
+});
