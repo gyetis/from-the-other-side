@@ -18,5 +18,8 @@
     "bugs": {
         "url": "https://github.com/gyetis/from-the-other-side/issues"
     },
-    "homepage": "https://github.com/gyetis/from-the-other-side#readme"
+    "homepage": "https://github.com/gyetis/from-the-other-side#readme",
+    "dependencies": {
+        "uuid": "^14.0.3"
+    }
 }

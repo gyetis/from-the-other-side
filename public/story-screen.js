@@ -1,4 +1,4 @@
-const data = await fetch('/api');
+const data = await fetch('./api');
 const response = await data.json();
 renderCards(response);
 
