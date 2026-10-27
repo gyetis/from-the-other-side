@@ -2,6 +2,7 @@ import { v4 as uuidv4 } from 'uuid';
 
 import { getData, sendData } from '../utils/dataOperations.js';
 import { sendResponse } from '../utils/sendResponse.js';
+import { sanitizeInput } from '../utils/sanitizeInput.js';
 
 export async function handleGet(res) {
     const data = await getData();
@@ -15,14 +16,15 @@ export async function handlePost(res, req) {
             body += chunk;
         }
         const story = JSON.parse(body);
-        if (!story || typeof story !== 'object' || Array.isArray(story)) {
-            throw new Error('Request body must be a JSON object');
-        }
-
         story.uuid = uuidv4();
-        body = JSON.stringify(story);
-        await sendData(story);
-        sendResponse(res, 201, 'application/json', body);
+        const sanitizedBody = sanitizeInput(story);
+        await sendData(sanitizedBody);
+        sendResponse(
+            res,
+            201,
+            'application/json',
+            JSON.stringify(sanitizedBody)
+        );
     } catch (err) {
         console.error(err);
         sendResponse(
