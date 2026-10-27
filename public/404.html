@@ -19,28 +19,9 @@
 
     <body>
         <header>
-            <div class="top-header">
-                <img
-                    class="logo-img"
-                    src="/images/candle-logo.png"
-                    alt="site logo"
-                />
-                <nav id="main-navigation">
-                    <ul role="list">
-                        <li role="listitem"><a href="/">Home</a></li>
-                        <li role="listitem">
-                            <a href="./story-screen.html">Read</a>
-                        </li>
-                        <li role="listitem">
-                            <a href="./upload-screen.html">Upload</a>
-                        </li>
-                    </ul>
-                </nav>
-            </div>
-            <div class="site-header">
-                <a href="/" class="site-title">From the Other Side</a>
-            </div>
+            <div data-navigation></div>
         </header>
+
         <main>
             <h1 class="hero-title">404 - You've been ghosted 👻</h1>
         </main>
@@ -48,6 +29,8 @@
         <footer>
             <p>&copy; From The Other Side. All rights reserved.</p>
         </footer>
-        <script type="module" src="/index.js"></script>
+
+        <script type="module" src="./index.js"></script>
+        <script type="module" src="./navigation.js"></script>
     </body>
 </html>
