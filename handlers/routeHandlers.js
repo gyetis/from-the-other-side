@@ -1,5 +1,6 @@
 import { v4 as uuidv4 } from 'uuid';
 
+import { storyEvents } from '../events/storyEvents.js';
 import { getData, sendData } from '../utils/dataOperations.js';
 import { sendResponse } from '../utils/sendResponse.js';
 import { sanitizeInput } from '../utils/sanitizeInput.js';
@@ -19,6 +20,7 @@ export async function handlePost(res, req) {
         story.uuid = uuidv4();
         const sanitizedBody = sanitizeInput(story);
         await sendData(sanitizedBody);
+        storyEvents.emit('story-added', sanitizedBody);
         sendResponse(
             res,
             201,
