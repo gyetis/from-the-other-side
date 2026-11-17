@@ -11,4 +11,4 @@ npm install
 npm start
 ```
 
-Once you see `Running at http://localhost:5173` on the console, please go ahead and click on the link or open it on your preferred browser.
+Once you see `Server running at http://localhost:3000`, please go ahead and click on the link or open it on your preferred browser.
